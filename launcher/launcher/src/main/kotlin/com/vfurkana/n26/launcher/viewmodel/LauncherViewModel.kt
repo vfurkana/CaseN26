@@ -1,27 +1,34 @@
 package com.vfurkana.n26.launcher.viewmodel
 
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.OnLifecycleEvent
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import com.vfurkana.n26.bc.di.IODispatcher
+import com.vfurkana.n26.bc.di.MainDispatcher
+import com.vfurkana.n26.bc.navigation.NavigationPoint
+import com.vfurkana.n26.bc.utils.StatefulData
 import com.vfurkana.n26.launcher.data.local.SharedPreferencesHelper
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 
 class LauncherViewModel @Inject constructor(
-    val sharedPreferencesHelper: SharedPreferencesHelper
-) : ViewModel() {
+    val sharedPreferencesHelper: SharedPreferencesHelper,
+    @IODispatcher val ioDispatcher: CoroutineDispatcher,
+    @MainDispatcher val mainDispatcher: CoroutineDispatcher
+) : ViewModel(),LifecycleObserver {
 
+    val eventLiveData = MutableLiveData<StatefulData<NavigationPoint>>()
 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     fun onResume() {
-        flow {
-            val saveSuccess = sharedPreferencesHelper.getTutorialShown()
-            emit(saveSuccess)
-        }.flowOn(ioDispatcher)
-            .onStart { eventLiveData.value = "Start" }
-            .onEach { eventLiveData.value = "isSuccess:$it" }
-            .catch { eventLiveData.value = "catch: $it" }
-            .flowOn(mainDispatcher)
-            .launchIn(viewModelScope)
+        viewModelScope.launch(ioDispatcher) {
+            val isTutorialShow = sharedPreferencesHelper.getTutorialShown()
+            withContext(mainDispatcher) {
+                if (isTutorialShow) eventLiveData.value =
+                    StatefulData.Success(NavigationPoint.Charts)
+                else eventLiveData.value = StatefulData.Success(NavigationPoint.Onbarding)
+            }
+        }
     }
 }

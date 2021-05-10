@@ -34,4 +34,7 @@ dependencies {
     //Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.kotlin_coroutines}")
 
+    //ViewmodelLifecycle
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}")
+
 }

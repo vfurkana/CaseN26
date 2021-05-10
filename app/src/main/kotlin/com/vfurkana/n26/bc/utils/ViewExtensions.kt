@@ -1,6 +1,5 @@
 package com.vfurkana.n26.bc.utils
 
-import android.opengl.Visibility
 import android.view.View
 
 fun View.visible() {

@@ -2,7 +2,7 @@ package com.vfurkana.n26.onboarding.view
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import com.vfurkana.n26.onboarding.R
+import com.vfurkana.n26.launcher.R
 
 data class OnboardingPage(
     val order: Int = 0,

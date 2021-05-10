@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="com.vfurkana.n26.onboarding">
+    package="com.vfurkana.n26.launcher">
 
     <dist:module
         dist:instant="false"
@@ -13,12 +13,7 @@
     </dist:module>
 
     <application android:allowBackup="false">
-        <activity android:name=".view.OnboardingActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name="com.vfurkana.n26.onboarding.view.OnboardingActivity">
         </activity>
     </application>
 </manifest>

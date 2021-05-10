@@ -5,4 +5,6 @@
     <string name="onboarding_third">Once you skip you won\'t be able to see this page again unless you clear the app cache and storage.</string>
     <string name="onboarding_fourth">So while you\'re here enjoy those nice numeric character vector arts by freepik.com</string>
     <string name="skip">skip</string>
+    <string name="read_write_error">An error occurred while writing to memory.</string>
+    <string name="unexpected_error">An unexpected error has occurred</string>
 </resources>

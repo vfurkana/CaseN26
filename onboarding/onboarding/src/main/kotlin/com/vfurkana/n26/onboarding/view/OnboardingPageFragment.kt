@@ -1,14 +1,11 @@
 package com.vfurkana.n26.onboarding.view
 
-import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.vfurkana.n26.bc.utils.gone
-import com.vfurkana.n26.bc.utils.visible
-import com.vfurkana.n26.onboarding.databinding.FragmentOnboardingPageBinding
+import com.vfurkana.n26.launcher.databinding.FragmentOnboardingPageBinding
 
 class OnboardingPageFragment(val onboardingPage: OnboardingPage, val isLast: Boolean = false) :
     Fragment() {
