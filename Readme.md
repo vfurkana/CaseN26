@@ -6,7 +6,7 @@ N26 Coding challenge app to demonstrate coding skills.
 ### Following technologies are used to fulfill expectations:
 - Kotlin programming language and kotlin android extensions.
 - MVVM Pattern
-- Dependency injection with Hilt.
+- Dependency injection with Dagger2.
 - RxKotlin
 - Retrofit, OkHttp3
 - Bitrise for CI
@@ -29,6 +29,10 @@ https://pedrookawa.medium.com/clean-architecture-with-dynamic-features-and-hilt-
 https://github.com/MojRoid/memes
 https://medium.com/insiden26/practical-example-using-reactive-clean-architecture-approach-8a2436ea76b4
 https://robinhood.engineering/android-inter-module-navigation-with-dagger-b808c4579067
-
+https://proandroiddev.com/navigation-with-dynamic-feature-modules-48ee7645488
+https://proandroiddev.com/android-singleliveevent-redux-with-kotlin-flow-b755c70bb055
 Other References:
 https://developer.android.com/training/dependency-injection/hilt-multi-module
+
+//Notes
+//instead of passing retrofit and shared preferences to other modules if we pass interface and implement it in the app, other modules won't be dependent on android or retrofit since they already depend on app where interface lies.

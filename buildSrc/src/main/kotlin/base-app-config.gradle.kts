@@ -17,10 +17,13 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    //for hilt
+    //for dagger
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    sourceSets {
+        map { it.java.srcDir("src/${it.name}/kotlin/") }
     }
     //for viewmodels() extension
     kotlinOptions {
@@ -30,15 +33,10 @@ android {
     buildTypes {
         getByName("debug") {
             isMinifyEnabled = false
-            applicationIdSuffix = ".debug"
         }
         getByName("release") {
             isMinifyEnabled = true
         }
-    }
-
-    viewBinding {
-        android.buildFeatures.viewBinding = true
     }
 }
 

@@ -18,13 +18,13 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
+    sourceSets {
+        map { it.java.srcDir("src/${it.name}/kotlin/") }
+    }
+
     //for viewmodels() extension
     kotlinOptions {
         jvmTarget = "1.8"
-    }
-
-    viewBinding {
-        android.buildFeatures.viewBinding = true
     }
 }
 
