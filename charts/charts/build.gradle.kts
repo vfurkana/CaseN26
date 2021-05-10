@@ -29,10 +29,16 @@ dependencies {
     // For api
     implementation("com.squareup.retrofit2:retrofit:${Versions.retrofit}")
 
+    //livedata kotlin extensions
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}")
+
     //ViewFeatures
     implementation("com.google.android.material:material:${Versions.material}")
 
     //Android activity and fragment extensions
     implementation("androidx.activity:activity-ktx:${Versions.activityKtx}")
     implementation("androidx.fragment:fragment-ktx:${Versions.fragmentKtx}")
+
+    //LineChart
+    implementation("com.github.PhilJay:MPAndroidChart:${Versions.mpAndroidChart}")
 }

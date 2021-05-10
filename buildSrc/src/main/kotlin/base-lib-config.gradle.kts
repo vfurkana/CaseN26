@@ -1,11 +1,22 @@
 plugins {
-    id("java-library")
-    id("kotlin")
+    id("com.android.library")
+    kotlin("android")
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+android {
+    compileSdkVersion(Versions.compileSdk)
+    buildToolsVersion(Versions.buildTools)
+
+    defaultConfig {
+        minSdkVersion(Versions.minSdk)
+        targetSdkVersion(Versions.targetSdk)
+    }
+
+    //for dagger
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
 
     sourceSets {
         map { it.java.srcDir("src/${it.name}/kotlin/") }

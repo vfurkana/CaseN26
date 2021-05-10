@@ -7,8 +7,7 @@ import com.vfurkana.n26.bc.di.IODispatcher
 import com.vfurkana.n26.bc.di.MainDispatcher
 import com.vfurkana.n26.onboarding.data.local.SharedPreferencesHelper
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 class OnboardingViewModel @Inject constructor(
@@ -20,14 +19,14 @@ class OnboardingViewModel @Inject constructor(
     val eventLiveData = MutableLiveData<String>()
 
     fun onSkip() {
-        viewModelScope.launch(ioDispatcher) {
-            sharedPreferencesHelper.saveTutorialShown()
-            withContext(mainDispatcher) {
-                val readBool = sharedPreferencesHelper.getTutorialShown()
-                eventLiveData.value = "Test boolean: $readBool"
-            }
-        }
+        flow {
+            val saveSuccess = sharedPreferencesHelper.saveTutorialShown()
+            emit(saveSuccess)
+        }.flowOn(ioDispatcher)
+            .onStart { eventLiveData.value = "Start" }
+            .onEach { eventLiveData.value = "isSuccess:$it" }
+            .catch { eventLiveData.value = "catch: $it" }
+            .flowOn(mainDispatcher)
+            .launchIn(viewModelScope)
     }
-
-
 }

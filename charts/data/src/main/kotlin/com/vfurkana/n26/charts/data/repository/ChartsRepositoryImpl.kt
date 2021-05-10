@@ -11,23 +11,13 @@ class ChartsRepositoryImpl @Inject constructor(
     private val blockchainChartsApi: BlockchainChartsApi
 ): ChartsRepository {
 
-    override fun getTransactionsPerSecond(timespan: String, rollingAverage: String): Flow<ChartsDomain> {
+    override fun getCharts(
+        chartType: String,
+        timespan: String,
+        rollingAverage: String
+    ): Flow<ChartsDomain> {
         return flow {
-            val result = blockchainChartsApi.getTransactionsPerSecond(timespan, rollingAverage).toDomain()
-            emit(result)
-        }
-    }
-
-    override fun getUSDMarketPrice(timespan: String, rollingAverage: String): Flow<ChartsDomain> {
-        return flow {
-            val result = blockchainChartsApi.getUSDMarketPrice(timespan, rollingAverage).toDomain()
-            emit(result)
-        }
-    }
-
-    override fun getUSDTradeVolume(timespan: String, rollingAverage: String): Flow<ChartsDomain> {
-        return flow {
-            val result = blockchainChartsApi.gerUSDTradeVolume(timespan, rollingAverage).toDomain()
+            val result = blockchainChartsApi.getCharts(chartType, timespan, rollingAverage).toDomain()
             emit(result)
         }
     }

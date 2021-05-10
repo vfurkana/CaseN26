@@ -20,4 +20,6 @@ object Versions {
     const val gson = "2.8.6"
     const val playCore = "1.10.0"
     const val playCoreKTX = "1.8.1"
+    const val mpAndroidChart = "3.1.0"
+    const val lifecycle = "2.3.1"
 }

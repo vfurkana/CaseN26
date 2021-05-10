@@ -5,12 +5,13 @@ plugins {
 }
 
 android {
-    dynamicFeatures = mutableSetOf(":onboarding:onboarding", ":charts:charts")
+    dynamicFeatures = mutableSetOf(":onboarding:onboarding", ":charts:charts", ":launcher:launcher")
 
     kapt {
         correctErrorTypes = true
     }
 }
+android.buildFeatures.viewBinding = true
 
 dependencies {
     //Dependency Injection

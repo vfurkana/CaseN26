@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="onboarding_first">This is the first page of onboarding.</string>
-    <string name="onboarding_second">This is the second page of onboarding.</string>
-    <string name="onboarding_third">This is the third page of onboarding.</string>
-    <string name="onboarding_fourth">This is the fourth page of onboarding.</string>
+    <string name="onboarding_second">These pages are here so I can present multi module project.</string>
+    <string name="onboarding_third">Once you skip you won\'t be able to see this page again unless you clear the app cache and storage.</string>
+    <string name="onboarding_fourth">So while you\'re here enjoy those nice numeric character vector arts by freepik.com</string>
     <string name="skip">skip</string>
 </resources>

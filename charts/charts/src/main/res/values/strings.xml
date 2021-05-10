@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="charts_placeholder">Das ist Charts Aktivite</string>
+    <string name="period_one_week">One week</string>
+    <string name="period_one_month">One month</string>
+    <string name="period_one_year">One year</string>
+    <string name="period_three_years">Three years</string>
+    <string name="unexpected_error">Unexpected error occurred please try again.</string>
+    <string name="retry">Retry</string>
+    <string name="transactions_per_second">Transactions Per Second</string>
+    <string name="market_price_usd">Market Price (USD)</string>
+    <string name="trade_volume">Trade Volume (USD)</string>
+    <string name="date_range">Date Range</string>
 </resources>

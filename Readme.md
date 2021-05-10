@@ -36,3 +36,4 @@ https://developer.android.com/training/dependency-injection/hilt-multi-module
 
 //Notes
 //instead of passing retrofit and shared preferences to other modules if we pass interface and implement it in the app, other modules won't be dependent on android or retrofit since they already depend on app where interface lies.
+//Kotlin DSL and Dagger didn't leave any possible way to use data and domain libraries as java library thus they had to be implemented as com.android.library

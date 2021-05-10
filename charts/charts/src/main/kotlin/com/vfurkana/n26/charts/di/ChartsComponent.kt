@@ -6,7 +6,6 @@ import com.vfurkana.n26.charts.data.di.ChartsRepositoryModule
 import com.vfurkana.n26.charts.domain.di.ChartsUseCaseModule
 import com.vfurkana.n26.charts.view.ChartsActivity
 import dagger.Component
-import retrofit2.Retrofit
 
 @Component(
     dependencies = [ChartsFeatureDependencies::class],

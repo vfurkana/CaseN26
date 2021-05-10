@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="com.vfurkana.n26.onboarding">
+    package="com.vfurkana.n26.launcher">
 
     <dist:module
         dist:instant="false"
-        dist:title="@string/title_onboarding">
+        dist:title="@string/title_launcher">
         <dist:delivery>
             <dist:install-time />
         </dist:delivery>
@@ -13,7 +13,7 @@
     </dist:module>
 
     <application android:allowBackup="false">
-        <activity android:name=".view.OnboardingActivity">
+        <activity android:name=".view.LauncherActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
