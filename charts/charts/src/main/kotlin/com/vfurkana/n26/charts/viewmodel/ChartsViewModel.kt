@@ -52,8 +52,7 @@ class ChartsViewModel @Inject constructor(
     fun getChart() {
         combine(dateRangeChannel.asFlow(), chartTypeChannel.asFlow()) { dateRange, type ->
             Pair(dateRange, type)
-        }.onStart { _chartData.postValue(StatefulData.Progress) }
-            .onEach { _chartData.postValue(StatefulData.Progress) }
+        }.onEach { _chartData.postValue(StatefulData.Progress) }
             .debounce(1000)
             .flatMapMerge {
                 _activeDateRange.postValue(it.first)

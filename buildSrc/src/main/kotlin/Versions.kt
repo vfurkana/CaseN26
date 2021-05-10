@@ -22,4 +22,12 @@ object Versions {
     const val playCoreKTX = "1.8.1"
     const val mpAndroidChart = "3.1.0"
     const val lifecycle = "2.3.1"
+    //test
+    const val junit = "4.13.2"
+    const val mockk = "1.11.0"
+    const val roboelectric = "1.3.0"
+    const val mockito = "3.2.0"
+    const val mockito_inline = "2.8.47"
+    const val truth = "1.1.2"
+    const val core_testing = "2.1.0"
 }

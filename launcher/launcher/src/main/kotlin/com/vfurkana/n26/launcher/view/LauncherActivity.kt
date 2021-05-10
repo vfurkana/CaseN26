@@ -1,8 +1,10 @@
 package com.vfurkana.n26.launcher.view
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.play.core.splitcompat.SplitCompat
 import com.vfurkana.n26.bc.BuildConfig
 import com.vfurkana.n26.bc.di.LauncherFeatureDependencies
 import com.vfurkana.n26.bc.navigation.NavigationPoint
@@ -45,5 +47,10 @@ class LauncherActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(newBase)
+        SplitCompat.install(this)
     }
 }

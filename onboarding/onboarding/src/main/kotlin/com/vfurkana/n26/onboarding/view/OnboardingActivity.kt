@@ -1,5 +1,6 @@
 package com.vfurkana.n26.onboarding.view
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
+import com.google.android.play.core.splitcompat.SplitCompat
 import com.vfurkana.n26.bc.BuildConfig
 import com.vfurkana.n26.bc.di.OnboardingFeatureDependencies
 import com.vfurkana.n26.bc.navigation.NavigationPoint
@@ -92,5 +94,10 @@ class OnboardingActivity : AppCompatActivity() {
         binding.btSkip.setOnClickListener {
             viewModel.onSkip()
         }
+    }
+
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(newBase)
+        SplitCompat.install(this)
     }
 }

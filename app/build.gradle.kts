@@ -39,7 +39,7 @@ dependencies {
     implementation("com.google.code.gson:gson:${Versions.gson}")
 
     //Play core for dynamic features
-    implementation("com.google.android.play:core:${Versions.playCore}")
-    implementation("com.google.android.play:core-ktx:${Versions.playCoreKTX}")
+    api("com.google.android.play:core:${Versions.playCore}")
+    api("com.google.android.play:core-ktx:${Versions.playCoreKTX}")
 
 }

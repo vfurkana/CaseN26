@@ -1,6 +1,8 @@
 package com.vfurkana.n26.charts.view
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -10,6 +12,7 @@ import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.play.core.splitcompat.SplitCompat
 import com.vfurkana.n26.bc.di.ChartsFeatureDependencies
 import com.vfurkana.n26.bc.utils.StatefulData
 import com.vfurkana.n26.charts.R
@@ -71,6 +74,7 @@ class ChartsActivity : AppCompatActivity() {
         })
 
         viewModel.chartData.observe(this, {
+            Log.i("kokoko",it.toString())
             when (it) {
                 is StatefulData.Progress -> {
                     binding.progressBar.show()
@@ -150,5 +154,10 @@ class ChartsActivity : AppCompatActivity() {
                 ChartsFeatureDependencies::class.java
             )
         ).build().inject(this)
+    }
+
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(newBase)
+        SplitCompat.install(this)
     }
 }
