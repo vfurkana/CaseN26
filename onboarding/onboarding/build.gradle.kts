@@ -13,11 +13,6 @@ android {
     defaultConfig {
         applicationId = "com.vfurkana.n26.onboarding"
     }
-    buildTypes {
-        getByName("debug") {
-            applicationIdSuffix = ".debug"
-        }
-    }
 }
 
 android.buildFeatures.viewBinding = true

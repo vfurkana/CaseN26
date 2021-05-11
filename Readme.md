@@ -18,7 +18,24 @@ Good-to-haves:
 - Good UX and well polished UI
 - Multi-modular project structure
 - <strike>CI Integration (e.g run tests, build apk)</strike> Missing
+
+
+####   Building/Running instructions
+
+Since dynamic features are only supported by Android App Bundle generating apk will crash the app on start. Please follow [instructions](https://developer.android.com/studio/command-line/bundletool) on how to deploy aab to device.
+In short:
+1. Install bundletool
+>brew install bundletool
+2. Generate apks from bundle
+> bundletool build-apks --bundle=/MyApp/my_app.aab --output=/MyApp/my_app.apks
+3. Deploy apks to connected device.
+> install-apks --apks=/MyApp/my_app.apks --adb=/Users/{User}/Library/Android/sdk/platform-tools/adb
+4. If more than 1 device is connected add following to previous command
+If more than 1 device is connected specify device id by adding
+> --device-id={deviceID}
+
 ----
+
 ### Stack
 - Kotlin
 - Kotlin DSL
@@ -32,8 +49,6 @@ Good-to-haves:
 - Testing: JUnit, Mockito, Truth
 - MPAndroidChart.
 
-#### Building instructions
-No specific instructions. Apk is on top level directory of the project.
 
 #### Area of improvement
 Navigation between the dynamic features are handled poorly with reflection. Better solutions should be applied.
@@ -46,7 +61,7 @@ Only unit tests are present. And it's only for single feature. Could be expanded
 
 Dagger2 implementation could be simplifed.
 
-And tons of others. At the end of the day It's Android always room for deprecating new stuff.
+And tons of others. At the end of the day it's Android, always room for deprecating new stuff.
 
 
 #### Personal takeaways

@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
     kotlin("kapt")
 }
+
 android {
     lintOptions.isCheckReleaseBuilds = false
 
@@ -12,11 +13,6 @@ android {
 
     defaultConfig {
         applicationId = "com.vfurkana.n26.launcher"
-    }
-    buildTypes {
-        getByName("debug") {
-            applicationIdSuffix = ".debug"
-        }
     }
 }
 
